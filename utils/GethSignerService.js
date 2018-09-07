@@ -90,7 +90,6 @@ const Signer = function(web3Provider) {
   };
 
   oThis.signTransaction = function(transactionData, _from) {
-    //console.log('transactionData', transactionData);
     if (!transactionData || !transactionData.from) {
       return Promise.reject('Invalid transactionData');
     }

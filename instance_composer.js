@@ -87,6 +87,10 @@ InstanceComposer.prototype = {
       ClassConstructor.apply(this, arguments);
     };
     DerivedClass.prototype = derivedPrototype;
+
+    //Copy over all static stuff.
+    Object.assign(DerivedClass, ClassConstructor);
+
     return DerivedClass;
   }
 };

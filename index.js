@@ -11,13 +11,14 @@ require('./providers/ChainWeb3');
 require('./lib/Signers');
 require('./lib/Setup');
 require('./lib/Contracts');
+require('./lib/TokenEconomy');
 
-const OpenST = function(gethEndPoint) {
+const OpenST = function(gethEndPoint, configStrategy) {
   const oThis = this;
 
   oThis.version = version;
 
-  oThis.configurations = Object.assign({}, { gethEndPoint: gethEndPoint });
+  oThis.configurations = Object.assign({ gethEndPoint: gethEndPoint }, configStrategy);
 
   const _instanceComposer = new InstanceComposer(oThis.configurations);
 
@@ -37,6 +38,8 @@ const OpenST = function(gethEndPoint) {
   oThis.signers = oThis.ic().Signers();
 
   oThis.utils = OpenST.utils;
+
+  oThis.TokenEconomy = oThis.ic().TokenEconomy();
 };
 
 OpenST.prototype = {
