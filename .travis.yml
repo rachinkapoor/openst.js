@@ -5,6 +5,7 @@ branches:
   only:
   - master
   - develop
+  - openst_0_9_4_develop
 notifications:
   email:
     recipients:
@@ -26,7 +27,7 @@ install:
   - npm install
   - npm install -g mocha
 before_script:
-  - node tools/initDevEnv.js
+  - node tools/initDevEnv.js ~
 script:
   - mocha --timeout 120000 test/* --exit
 after_script:
