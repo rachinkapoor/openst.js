@@ -1,4 +1,4 @@
-OpenST.js
+ OpenST.js
 ============
 
 OpenST is a framework for building token economies. Here are steps to get started with OpenST.js. In order to view an example, please visit our example repo, [OpenST.js Examples](https://github.com/OpenSTFoundation/openst-js-examples).
